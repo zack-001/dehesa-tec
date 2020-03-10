@@ -1,0 +1,26 @@
+
+
+
+<div class="col-lg-6">
+    <h1>{{titulo}}</h1>
+    <p>Tecnológicos:</p>
+    
+<table class="table table-havor table-striped table-bordered">
+  <tr *ngFor="let technological of technologicals; let e=even; let o=odd;">
+      <td *ngIf="o" style="background-color:#00a0ff"> 
+        {{technological.name}}
+      </td>
+      <td *ngIf="e"> {{technological.name}}</td>
+      <td *ngIf="o" style="background-color:#00a0ff">
+        {{technological.pageurl}}
+      </td>
+      <td *ngIf="e"> {{technological.pageurl}}</td>
+      <td *ngIf="o" style="background-color:#00a0ff">
+        <a [routerLink]="['/updateTechnological',technological._id]" class="btn btn-sm btn-warning"> Editar</a>
+      </td>
+      <td *ngIf="e">
+        <a [routerLink]="['/updateTechnological',technological._id]" class="btn btn-sm btn-warning"> Editar</a>
+      </td>
+  </tr>
+</table>
+</div>
